@@ -36,7 +36,7 @@ const {
   SquadLoader,
 } = require('../../../.aios-core/development/scripts/squad');
 
-// Test paths - use unique directory to avoid parallel test collisions
+// Test paths
 const FIXTURES_PATH = path.join(__dirname, '..', 'fixtures', 'squad');
 const TEMP_PATH = path.join(__dirname, 'temp-download-publish');
 
@@ -85,13 +85,9 @@ describe('Squad Download & Publish Integration', () => {
 
   afterEach(async () => {
     // Clean temp directory between tests
-    try {
-      const entries = await fs.readdir(TEMP_PATH);
-      for (const entry of entries) {
-        await fs.rm(path.join(TEMP_PATH, entry), { recursive: true, force: true });
-      }
-    } catch {
-      // Directory may not exist, ignore
+    const entries = await fs.readdir(TEMP_PATH);
+    for (const entry of entries) {
+      await fs.rm(path.join(TEMP_PATH, entry), { recursive: true, force: true });
     }
   });
 
@@ -113,7 +109,7 @@ license: MIT
 components:
   tasks:
     - sample-task.md
-`,
+`
       );
 
       await fs.writeFile(
@@ -134,14 +130,14 @@ Checklist:
 # Sample Task
 
 This is a sample task for integration testing.
-`,
+`
       );
 
       expect(
         await fs
           .access(squadPath)
           .then(() => true)
-          .catch(() => false),
+          .catch(() => false)
       ).toBe(true);
 
       // Step 2: Validate the created squad
@@ -190,7 +186,7 @@ This is a sample task for integration testing.
           expect(squad).toHaveProperty('type');
         }
       },
-      30000,
+      30000
     ); // 30 second timeout for network
   });
 
@@ -224,12 +220,12 @@ This is a sample task for integration testing.
             fs
               .access(path.join(result.path, 'config.yaml'))
               .then(() => true)
-              .catch(() => false),
+              .catch(() => false)
           );
 
         expect(manifestExists).toBe(true);
       },
-      60000,
+      60000
     ); // 60 second timeout for network
   });
 
@@ -260,7 +256,7 @@ author: Test Suite
 components:
   tasks:
     - sample-task.md
-`,
+`
         );
 
         await fs.writeFile(
@@ -281,7 +277,7 @@ Checklist:
 # Sample Task
 
 This is a sample task for testing.
-`,
+`
         );
 
         // gh auth is mocked globally
@@ -317,7 +313,7 @@ author: Registry
 components:
   tasks:
     - sample-task.md
-`,
+`
       );
 
       await fs.writeFile(
@@ -336,7 +332,7 @@ Checklist:
 ---
 
 # Sample Task
-`,
+`
       );
 
       // Validate the mock squad
@@ -370,7 +366,7 @@ Checklist:
 version: 1.0.0
 description: Test
 author: Test
-`,
+`
       );
 
       await fs.writeFile(
@@ -385,7 +381,7 @@ Saida: "test"
 Checklist: []
 ---
 # Test
-`,
+`
       );
 
       // Test that checkAuth method works
@@ -418,8 +414,8 @@ Checklist: []
               cb(
                 Buffer.from(
                   JSON.stringify({ version: '1.0.0', squads: { official: [], community: [] } }),
-                  'utf-8',
-                ),
+                  'utf-8'
+                )
               );
             }
             if (event === 'end') {
@@ -461,8 +457,8 @@ Checklist: []
               cb(
                 Buffer.from(
                   JSON.stringify({ version: '1.0.0', squads: { official: [], community: [] } }),
-                  'utf-8',
-                ),
+                  'utf-8'
+                )
               );
             }
             if (event === 'end') {

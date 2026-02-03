@@ -18,7 +18,7 @@ const yaml = require('js-yaml');
 const { SquadAnalyzer } = require('../../../.aios-core/development/scripts/squad/squad-analyzer');
 const { SquadExtender } = require('../../../.aios-core/development/scripts/squad/squad-extender');
 
-// Test directory for integration tests - use unique directory to avoid parallel test collisions
+// Test directory for integration tests
 const INTEGRATION_PATH = path.join(__dirname, 'temp-analyze-extend');
 
 describe('Squad Analyze & Extend Integration', () => {
@@ -77,7 +77,7 @@ describe('Squad Analyze & Extend Integration', () => {
     // Create initial agent
     await fs.writeFile(
       path.join(testSquadPath, 'agents', 'initial-agent.md'),
-      '# initial-agent\n\nInitial test agent.\n',
+      '# initial-agent\n\nInitial test agent.\n'
     );
 
     // Initialize analyzer and extender pointing to parent directory
