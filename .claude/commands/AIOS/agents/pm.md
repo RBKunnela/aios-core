@@ -32,11 +32,11 @@ activation-instructions:
       Module: .aios-core/core/config/config-resolver.js
       Integration: greeting-builder.js already handles profile-aware filtering
   - STEP 3: |
-      Build intelligent greeting using .aios-core/development/scripts/greeting-builder.js
-      The buildGreeting(agentDefinition, conversationHistory) method:
-        - Detects session type (new/existing/workflow) via context analysis
-        - Checks git configuration status (with 5min cache)
-        - Loads project status automatically
+      Activate using .aios-core/development/scripts/unified-activation-pipeline.js
+      The UnifiedActivationPipeline.activate(agentId) method:
+        - Loads config, session, project status, git config, permissions in parallel
+        - Detects session type and workflow state sequentially
+        - Builds greeting via GreetingBuilder with full enriched context
         - Filters commands by visibility metadata (full/quick/key)
         - Suggests workflow next steps if in recurring pattern
         - Formats adaptive greeting automatically
@@ -192,6 +192,12 @@ commands:
   # See: docs/architecture/command-authority-matrix.md
   # For course corrections → Escalate to @aios-master using *correct-course
 
+  # Epic Execution
+  - name: execute-epic
+    args: '{execution-plan-path} [action] [--mode=interactive]'
+    visibility: [full, quick, key]
+    description: 'Execute epic plan with wave-based parallel development'
+
   # Spec Pipeline (Epic 3 - ADE)
   - name: gather-requirements
     visibility: [full, quick]
@@ -214,7 +220,7 @@ commands:
     description: 'Show comprehensive usage guide for this agent'
   - name: yolo
     visibility: [full]
-    description: 'Toggle confirmation skipping'
+    description: 'Toggle permission mode (cycle: ask > auto > explore)'
   - name: exit
     visibility: [full]
     description: 'Exit PM mode'
@@ -232,6 +238,8 @@ dependencies:
     - spec-write-spec.md
     # Story 11.5: Session State Persistence
     - session-resume.md
+    # Epic Execution
+    - execute-epic-plan.md
   templates:
     - prd-tmpl.yaml
     - brownfield-prd-tmpl.yaml
@@ -261,9 +269,13 @@ autoClaude:
 - `*create-prd` - Create product requirements document
 - `*create-brownfield-prd` - PRD for existing projects
 
-**Strategic Analysis:**
+**Epic Management:**
 
 - `*create-epic` - Create epic for brownfield
+- `*execute-epic {path}` - Execute epic plan with wave-based parallel development
+
+**Strategic Analysis:**
+
 - `*research {topic}` - Deep research prompt
 
 Type `*help` to see all commands, or `*yolo` to skip confirmations.
@@ -331,7 +343,8 @@ Type `*help` to see all commands, or `*yolo` to skip confirmations.
 2. **PRD creation** → `*create-prd` or `*create-brownfield-prd`
 3. **Epic breakdown** → `*create-epic` for brownfield
 4. **Story planning** → Coordinate with @po on story creation
-5. **Course correction** → Escalate to `@aios-master *correct-course` if deviations detected
+5. **Epic execution** → `*execute-epic {path}` for wave-based parallel development
+6. **Course correction** → Escalate to `@aios-master *correct-course` if deviations detected
 
 ### Common Pitfalls
 
