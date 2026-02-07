@@ -1,0 +1,165 @@
+# MMOS Minds Expansion Wave 2
+# Generated: 2026-02-07
+# Author: Claude (Opus 4.6)
+# Total new minds: 25 (skeletons)
+
+expansion:
+  wave: 2
+  date: "2026-02-07"
+  executed_by: "Claude (Opus 4.6)"
+  total_new_minds: 25
+  status: SKELETON
+  previous_count: 27
+  new_count: 52
+
+domains:
+  qa_testing:
+    description: "Quality Assurance & Testing Engineering"
+    count: 5
+    minds:
+      - slug: maaret_pyhajarvi
+        display_name: "Maaret Pyhäjärvi"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: james_bach
+        display_name: "James Bach"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: lisa_crispin
+        display_name: "Lisa Crispin"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: james_whittaker
+        display_name: "James Whittaker"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+      - slug: elisabeth_hendrickson
+        display_name: "Elisabeth Hendrickson"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+  rag_retrieval:
+    description: "RAG & Retrieval Systems"
+    count: 4
+    minds:
+      - slug: omar_khattab
+        display_name: "Omar Khattab"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: jerry_liu
+        display_name: "Jerry Liu"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: harrison_chase
+        display_name: "Harrison Chase"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: chip_huyen
+        display_name: "Chip Huyen"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+  llm_training:
+    description: "LLM Training & Fine-tuning"
+    count: 7
+    minds:
+      - slug: ilya_sutskever
+        display_name: "Ilya Sutskever"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: noam_shazeer
+        display_name: "Noam Shazeer"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: john_schulman
+        display_name: "John Schulman"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: tri_dao
+        display_name: "Tri Dao"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+      - slug: jared_kaplan
+        display_name: "Jared Kaplan"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: sebastian_raschka
+        display_name: "Sebastian Raschka"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+      - slug: edward_hu
+        display_name: "Edward Hu"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+  ai_entrepreneurs:
+    description: "AI Entrepreneurs & Industry Shapers"
+    count: 7
+    minds:
+      - slug: demis_hassabis
+        display_name: "Demis Hassabis"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: dario_amodei
+        display_name: "Dario Amodei"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: jensen_huang
+        display_name: "Jensen Huang"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: andrew_ng
+        display_name: "Andrew Ng"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: yann_lecun
+        display_name: "Yann LeCun"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+      - slug: fei_fei_li
+        display_name: "Fei-Fei Li"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+      - slug: clement_delangue
+        display_name: "Clément Delangue"
+        priority: MEDIUM
+        pipeline_phase: SKELETON
+
+  risk_philosophy:
+    description: "Risk & Philosophy (from benchmarks backlog)"
+    count: 2
+    minds:
+      - slug: nassim_taleb
+        display_name: "Nassim Nicholas Taleb"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+      - slug: naval_ravikant
+        display_name: "Naval Ravikant"
+        priority: HIGH
+        pipeline_phase: SKELETON
+
+next_steps:
+  - "Run viability assessments (APEX scoring) for all 25 minds"
+  - "Prioritize HIGH-priority minds for full pipeline execution"
+  - "Begin source collection for QA domain (most requested)"
+  - "Update MIGRATION_MANIFEST.yaml after first minds complete pipeline"

@@ -1,5 +1,5 @@
 name: mmos-squad
-version: 3.0.1
+version: 3.1.0
 description: |
   Mind Mapper OS - Cognitive Architecture Cloning System.
   Creates high-fidelity digital clones of thought leaders using
@@ -16,7 +16,7 @@ aios:
 
 # Mind Clones Location (migrated in STORY-10.7)
 mindsLocation: minds/
-mindsCount: 27
+mindsCount: 52
 mindsManifest: minds/MIGRATION_MANIFEST.yaml
 
 components:

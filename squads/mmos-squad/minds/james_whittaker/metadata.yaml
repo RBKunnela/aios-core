@@ -1,0 +1,18 @@
+mind:
+  id: james_whittaker
+  display_name: "James Whittaker"
+  status: skeleton
+  version: v0.1.0
+  apex_score: 0.0
+  icp_match: pending
+  domain: "qa-testing"
+  country: "USA"
+  created_at: '2026-02-07T13:00:45'
+  updated_at: '2026-02-07T13:00:45'
+  pipeline_phase: VIABILITY
+  flags:
+    needs_review:
+    - apex_score
+    - icp_match
+    - viability_assessment
+    - source_collection

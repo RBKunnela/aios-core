@@ -139,7 +139,170 @@ mind_benchmarks:
     test_protocol: null
     notes: "Contemporary - frequent updates needed"
 
-  # Add more minds as created
+  # === QA & Testing Engineering (Wave 2 - 2026-02-07) ===
+  maaret_pyhajarvi:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Exploratory testing, ensemble programming - skeleton"
+
+  james_bach:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Rapid Software Testing, context-driven school - skeleton"
+
+  lisa_crispin:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Agile Testing Quadrants - skeleton"
+
+  james_whittaker:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "Google testing model, SET/TE roles - skeleton"
+
+  elisabeth_hendrickson:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "Practical exploratory testing, Test Heuristics - skeleton"
+
+  # === RAG & Retrieval Systems (Wave 2 - 2026-02-07) ===
+  omar_khattab:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "ColBERT, DSPy - skeleton"
+
+  jerry_liu:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "LlamaIndex creator - skeleton"
+
+  harrison_chase:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "LangChain creator - skeleton"
+
+  chip_huyen:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "AI Engineering, RAG production - skeleton"
+
+  # === LLM Training & Fine-tuning (Wave 2 - 2026-02-07) ===
+  ilya_sutskever:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "GPT scaling, deep learning pioneer - skeleton"
+
+  noam_shazeer:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Transformer inventor, MoE - skeleton"
+
+  john_schulman:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "PPO, RLHF inventor - skeleton"
+
+  tri_dao:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "FlashAttention creator - skeleton"
+
+  jared_kaplan:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Scaling Laws author - skeleton"
+
+  sebastian_raschka:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "LLM training educator - skeleton"
+
+  edward_hu:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "LoRA inventor - skeleton"
+
+  # === AI Entrepreneurs (Wave 2 - 2026-02-07) ===
+  demis_hassabis:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "DeepMind, AlphaFold, Nobel Prize - skeleton"
+
+  dario_amodei:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Anthropic, Constitutional AI - skeleton"
+
+  jensen_huang:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "NVIDIA, GPU computing revolution - skeleton"
+
+  andrew_ng:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "Google Brain, AI education - skeleton"
+
+  yann_lecun:
+    current_fidelity: null
+    target_fidelity: 94
+    last_tested: null
+    test_protocol: null
+    notes: "CNN pioneer, Turing Award, Meta AI - skeleton"
+
+  fei_fei_li:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "ImageNet creator, Stanford HAI - skeleton"
+
+  clement_delangue:
+    current_fidelity: null
+    target_fidelity: 90
+    last_tested: null
+    test_protocol: null
+    notes: "Hugging Face, open-source AI - skeleton"
 
 # Improvement Targets
 improvement_targets:
@@ -169,6 +332,6 @@ warning_thresholds:
     action: "Prioritize deep layer work"
 
 # Benchmark Version
-version: "1.0.0"
+version: "2.0.0"
 created: "2026-01-09"
-updated: "2026-01-09"
+updated: "2026-02-07"
