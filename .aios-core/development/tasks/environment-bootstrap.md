@@ -491,6 +491,7 @@ cli_checks:
 
   quality:
     coderabbit:
+      tier: REQUIRED  # CodeRabbit is mandatory for all AIOS projects. The .coderabbit.yaml config file is created during the setup-github step (runs after environment-bootstrap).
       check_windows: |
         # Windows: CodeRabbit CLI is installed in WSL, not native Windows
         # First check if WSL is available

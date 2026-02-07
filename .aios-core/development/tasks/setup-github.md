@@ -62,7 +62,7 @@ atomic_layer: Organism
   validação: |
     {
       skip_workflows: boolean,      // Skip GitHub Actions setup
-      skip_coderabbit: boolean,     // Skip CodeRabbit configuration
+      # skip_coderabbit: DEPRECATED — CodeRabbit is MANDATORY for all AIOS projects (always false)
       skip_branch_protection: boolean, // Skip branch protection rules
       skip_secrets: boolean,        // Skip secrets wizard
       project_type: string          // node | python | go | rust | mixed
@@ -558,6 +558,47 @@ Write-Host "✅ Created .coderabbit.yaml"
 Write-Host ""
 Write-Host "📌 IMPORTANT: Install the CodeRabbit GitHub App:"
 Write-Host "   https://github.com/apps/coderabbitai"
+```
+
+> **NOTE: CodeRabbit is MANDATORY for all AIOS projects. This step cannot be skipped.**
+> The `skip_coderabbit` option has been deprecated and is always treated as `false`.
+
+**Post-Configuration Verification:**
+
+```powershell
+# Verify .coderabbit.yaml was created
+if (-not (Test-Path ".coderabbit.yaml")) {
+  Write-Error "CRITICAL: .coderabbit.yaml was not created. CodeRabbit setup failed."
+  exit 1
+}
+Write-Host "✅ .coderabbit.yaml exists"
+
+# Verify CodeRabbit GitHub App installation via gh API
+$repoName = (gh repo view --json nameWithOwner --jq '.nameWithOwner') 2>$null
+if ($repoName) {
+  $installations = gh api "/repos/$repoName/installation" 2>$null
+  if ($LASTEXITCODE -ne 0) {
+    Write-Host "⚠️  WARNING: CodeRabbit GitHub App may not be installed on this repo."
+    Write-Host "   Install it at: https://github.com/apps/coderabbitai"
+    Write-Host "   Then grant access to: $repoName"
+  } else {
+    Write-Host "✅ GitHub App installation detected for $repoName"
+  }
+}
+
+# Check CodeRabbit CLI auth status (if CLI is installed)
+$crVersion = $null
+if ($IsWindows -or $env:OS -eq "Windows_NT") {
+  $crVersion = wsl bash -c '~/.local/bin/coderabbit --version 2>/dev/null' 2>$null
+} else {
+  $crVersion = coderabbit --version 2>$null
+}
+
+if ($crVersion) {
+  Write-Host "✅ CodeRabbit CLI version: $crVersion"
+} else {
+  Write-Host "ℹ️  CodeRabbit CLI not installed locally (optional - GitHub App is sufficient)"
+}
 ```
 
 ---

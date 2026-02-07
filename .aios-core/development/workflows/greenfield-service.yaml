@@ -25,6 +25,27 @@ workflow:
 
   sequence:
     # ═══════════════════════════════════════════════════════════════════════════
+    # PHASE 0: GITHUB & CODERABBIT SETUP
+    # ═══════════════════════════════════════════════════════════════════════════
+    - id: devops-setup-github
+      agent: devops
+      action: setup_github_and_coderabbit
+      duration_estimate: "10-20 min"
+      creates:
+        - .github/workflows/ci.yml
+        - .github/workflows/pr-automation.yml
+        - .coderabbit.yaml
+      task: setup-github.md
+      optional: false
+      notes: |
+        MANDATORY FIRST STEP: GitHub DevOps + CodeRabbit setup:
+        - @devops → *setup-github
+        - Installs GitHub Actions workflows
+        - Configures CodeRabbit for automated code review (REQUIRED)
+        - Sets up branch protection rules
+        - CodeRabbit is MANDATORY for all AIOS projects
+
+    # ═══════════════════════════════════════════════════════════════════════════
     # PHASE 1: DISCOVERY & PLANNING
     # ═══════════════════════════════════════════════════════════════════════════
     - phase: 1

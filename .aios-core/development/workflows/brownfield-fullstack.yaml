@@ -23,6 +23,23 @@ workflow:
     - phase_4: Development Cycle
 
   sequence:
+    # ═══════════════════════════════════════════════════════════════════════════
+    # PRE-PHASE: CODERABBIT VERIFICATION
+    # ═══════════════════════════════════════════════════════════════════════════
+    - id: devops-verify-coderabbit
+      agent: devops
+      action: verify_coderabbit
+      duration_estimate: "5-10 min"
+      task: setup-github.md
+      optional: false
+      notes: |
+        MANDATORY: Verify CodeRabbit is configured for this project:
+        - Check if .coderabbit.yaml exists in project root
+        - If missing: run setup-github.md Step 4 to create it
+        - Verify CodeRabbit GitHub App is installed on the repo
+        - CodeRabbit is MANDATORY for all AIOS projects
+        - This step ensures brownfield projects have code review coverage
+
     - phase: 1
       name: Enhancement Classification & Routing
 
